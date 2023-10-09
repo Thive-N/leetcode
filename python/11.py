@@ -29,11 +29,6 @@ class Solution:
                 else:
                     r -= 1
 
-            if m == 0:
-                continue
-
-            if abs(l-r) / m > max(height):
-                return
         return m
 
 
