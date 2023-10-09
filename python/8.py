@@ -1,0 +1,26 @@
+class Solution:
+    def myAtoi(self, s: str) -> int:
+        s = s.strip()
+        if not s:
+            return 0
+
+        sign = -1 if s[0] == '-' else 1
+        if s[0] in {'-', '+'}:
+            s = s[1:]
+
+        num = 0
+
+        for c in s:
+            # if digit break
+            if not c.isdigit():
+                break
+
+            # multiply num by ten and add integer
+            num = num * 10 + int(c)
+
+            if sign * num <= -2**31:
+                return -2**31
+            if sign * num >= 2**31 - 1:
+                return 2**31 - 1
+
+        return sign * num
