@@ -1,0 +1,13 @@
+from typing import List
+from collections import Counter
+
+
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        count = Counter(arr)
+        occurrences = set()
+        for value in count.values():
+            if value in occurrences:
+                return False
+            occurrences.add(value)
+        return True
