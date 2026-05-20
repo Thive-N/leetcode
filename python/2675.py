@@ -2,7 +2,7 @@ class Solution:
     def findThePrefixCommonArray(self, A: List[int], B: List[int]) -> List[int]:
         n = len(A)
         res = [0] * n
-        seen = set()
+        seen = [0] * (n + 1)
         
         for i in range(n):
             seen[0] += seen[A[i]]
