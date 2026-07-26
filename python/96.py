@@ -10,7 +10,7 @@ class Solution:
                 R = nodes - node
                 total += dp[L] * dp[R]
             dp[nodes] = total
-        return dp[n]
+        return dp
 
 if __name__ == "__main__":
     s = Solution()
