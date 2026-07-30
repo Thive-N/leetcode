@@ -1,3 +1,5 @@
 class Solution:
-    def minimumPushes(self, word: str) -> int:
-        return ((len(word)//8)*((len(word)//8)+1)*4)+((len(word)%8)*((len(word)//8)+1))
+    def minimumPushes(self, w):
+        i = len(w)
+        x = (i//8)
+        return (x*(x+1)*4)+((i%8)*(x+1))
