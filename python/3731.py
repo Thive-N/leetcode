@@ -1,8 +1,14 @@
 class Solution:
     def findMissingElements(self, nums: List[int]) -> List[int]:
-        n = len(nums)
-        for i in range(n):
-            index = abs(nums[i]) - 1
-            if nums[index] > 0:
-                nums[index] = -nums[index]
-        return [i + 1 for i in range(n) if nums[i] > 0]
+        nums.sort()
+        starting = nums[0]
+        ending = nums[-1]
+
+        arr = set(nums)
+        arr1 = []
+
+        for i in range(starting, ending + 1):
+            if i not in arr:
+                arr1.append(i)
+
+        return arr1
