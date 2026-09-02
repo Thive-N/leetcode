@@ -5,4 +5,5 @@ class Solution:
 
         o = sum(ol)
         e = sum(el)
+        
         return o+e
